@@ -21,38 +21,25 @@ function App() {
 function EditTitle() {
   const [title, setTitle] = useState("");
   const [firstname, setFirstname] = useState("");
-  const [y, setY] = useState(0)
-
-  useEffect(()=> {
-    const originalTitle = document.title
-    return () => {;
-      document.title = originalTitle
-
-    }
-  },[])
+  const [y, setY] = useState(0);
 
   useEffect(() => {
-    document.title = title;
-  }, [title]);
+    const originalTitle = document.title;
+    return () => {
+      document.title = originalTitle;
+    };
+  }, []);
 
   useEffect(() => {
-    const handler = (e) => 
-     {
-      console.log('scroll')
-      setY(window.scrollY)
-
-    }
-  window.addEventListener('scroll', handler)
-return() =>{
-  window.removeEventListener('scroll',handler)
-}
-  })
+    const originalTitle = document.title;
+    return () => {
+      document.title = originalTitle;
+    };
+  }, []);
 
   return (
     <div className="vstack gap-2">
-      <div>
-        scroll : {y}
-      </div>
+      <div>scroll : {y}</div>
       <Input
         placeholder="Modifier le titre"
         value={title}
