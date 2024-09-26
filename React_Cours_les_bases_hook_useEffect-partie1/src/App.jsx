@@ -21,7 +21,7 @@ function App() {
 function EditTitle() {
   const [title, setTitle] = useState("");
   const [firstname, setFirstname] = useState("");
-  const [y, setY] = useState(0);
+  // const [y, setY] = useState(0);
 
   useEffect(() => {
     const originalTitle = document.title;
@@ -31,11 +31,19 @@ function EditTitle() {
   }, []);
 
   useEffect(() => {
-    const originalTitle = document.title;
-    return () => {
-      document.title = originalTitle;
-    };
-  }, []);
+    document.title = title;
+  }, [title]);
+
+  // useEffect(() => {
+  //   const handler = (e) => {
+  //     console.log("scroll");
+  //     setY(window.scrollY);
+  //   };
+  //   window.addEventListener("scroll", handler);
+  //   return () => {
+  //     window.removeEventListener("scroll", handler);
+  //   }
+  // }, []);
 
   return (
     <div className="vstack gap-2">
