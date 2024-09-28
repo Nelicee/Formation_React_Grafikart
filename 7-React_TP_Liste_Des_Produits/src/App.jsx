@@ -52,6 +52,7 @@ function SearchBar({
           onChange={onSearchChange}
           placeholder="Rechercher..."
         />
+        <input type="range" className="form-range" min={0} max={10} />
         <Checkbox
           id="stocked"
           checked={showStockedOnly}
