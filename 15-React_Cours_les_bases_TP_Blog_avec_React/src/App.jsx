@@ -4,6 +4,7 @@ import { Contact } from "./pages/Contact.jsx";
 import { Single } from "./pages/Single.jsx";
 import { NotFound } from "./pages/NotFound.jsx";
 import {Header} from "./components/Header.jsx";
+import { Alert } from "./components/Alert.jsx";
 
 function App() {
   const { page, param } = useHashNavigation();
