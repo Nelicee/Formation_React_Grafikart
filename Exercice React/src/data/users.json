@@ -6,7 +6,7 @@
         "email": "Jacques.dubois@gmail.com",
         "adresse": "av des champs 9",
         "tel": "06 95 74 22 33",
-        "birthdate": ""
+        "birthdate": "26/02/1952"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "email": "Jacqueline.dubois@gmail.com",
         "adresse": "av des champs 9",
         "tel": "06 95 74 44 55",
-        "birthdate": ""
+        "birthdate": "27/08/1951"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "email": "Jacques.dubois@gmail.com",
         "adresse": "av des Elysée 154",
         "tel": "06 97 44 55 66",
-        "birthdate": ""
+        "birthdate": "15/11/1960"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "email": "Jacques.dubois@gmail.com",
         "adresse": "av des Elysée 154",
         "tel": "06 97 55 11 22",
-        "birthdate": ""
+        "birthdate": "02/10/1965"
     },
     {
         "id": 5,
@@ -42,6 +42,6 @@
         "email": "devosceline@gmail.com",
         "adresse": "MERRIS",
         "tel": "06 00 00 00 10",
-        "birthdate": ""
+        "birthdate": "17/12/1975"
     }
 ]

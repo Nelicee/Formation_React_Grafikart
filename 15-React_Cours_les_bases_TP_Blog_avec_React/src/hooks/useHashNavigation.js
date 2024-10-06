@@ -13,9 +13,9 @@ export function useHashNavigation() {
     };
   }, []);
 
-  const cleanedHash = hash.replaceAll("#", "").toLowerCase();
+  const cleanedHash = hash.replaceAll("#", '').toLowerCase();
   return {
-    page: cleanedHash ? cleanedHash.split(":")[0] : "home",
-    param: cleanedHash.split(":")[1],
+    page: cleanedHash ? cleanedHash.split(":")[0] : 'home',
+    param: cleanedHash.split(':')[1]
   };
 }

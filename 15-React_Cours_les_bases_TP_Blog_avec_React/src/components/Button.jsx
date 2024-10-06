@@ -6,7 +6,7 @@
  * @returns {JSX.Element}
  */
 
-export  function Button ({variant ='primary',...props}) {
+export  function Button ({variant = "primary",...props}) {
     const newProps = {
         ...props,
         className: `btn btn-${variant}`

@@ -5,17 +5,18 @@ import { Alert } from "../../components/Alert";
 import { useState } from "react";
 
 export function EditPostModal({ post, onClose, onSave }) {
- console.log("ouverture")
+ 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
   const handleSubmit = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     setError(null);
     setLoading(true);
     const data = new FormData(e.target);
     fetch(`https://jsonplacehoelder.typicode.com/posts/${post.id}`, {
       method: "PUT",
-      body: data,
+      body: data
     })
       .then((r) => r.json())
       .then((r) => {

@@ -3,6 +3,7 @@ import { useDocumentTitle } from "../hooks/useDocumentTitle.js";
 import { useFetch } from "../hooks/useFetch.js";
 import { Alert } from "../components/Alert.jsx";
 import { Card } from "../components/Card.jsx";
+
 export function Home() {
   useDocumentTitle("Mon blog");
 
@@ -10,10 +11,10 @@ export function Home() {
     "https://jsonplaceholder.typicode.com/posts?_limit=10"
   );
   if (loading) {
-    return <Spinner />;
+    return <Spinner />  
   }
   if (error) {
-    return <Alert type="danger">{error.toString()}</Alert>;
+    return <Alert type="danger">{error.toString()}</Alert>
   }
 
   return (

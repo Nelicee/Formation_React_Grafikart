@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "idUtilisateur": 2,
+        "nom": "Belle maison",
+        "valeur": "300 000",
+        "type": "maison à étage avec grand jardin"
+    },
+    {
+        "id": 2,
+        "idUtilisateur": 4,
+        "nom": "Tableau",
+        "valeur": "600 000",
+        "type": "Van Gogh"
+    },
+    {
+        "id": 3,
+        "idUtilisateur": 5,
+        "nom": "Voiture",
+        "valeur": "100 000",
+        "type": "Ferrari"
+    },
+    {
+        "id": 4,
+        "idUtilisateur": 5,
+        "nom": "Billet de train",
+        "valeur": "30",
+        "type": "Billet de train aller-retour Bruges-Bruxelles"
+    },   {
+        "id": 5,
+        "idUtilisateur": 5,
+        "nom": "Ordinateur",
+        "valeur": "3000",
+        "type": "Gaming"
+
+    }
+ 
+]

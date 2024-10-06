@@ -1,5 +1,8 @@
-// import users from "../data/users.json";
-// import { useState } from "react";
+import { Link } from "react-router-dom"
+import { calculateAge } from "../services/Users"
+
+
+
 export default function UsersTable({deleteUser, userData}) {
   return (
     <>
@@ -13,6 +16,7 @@ export default function UsersTable({deleteUser, userData}) {
           <th>Email</th>
           <th>Adresse</th>
           <th>Téléphone</th>
+          <th>Age</th>
           <th >Supprimer</th>
         </tr>
       </thead>
@@ -20,11 +24,12 @@ export default function UsersTable({deleteUser, userData}) {
         {userData.map((user) => (
           <tr key={user.id}>
               <td>{user.id}</td>
-            <td>{user.nom}</td>
+            <td><Link to={`users/${user.id}`}>{user.nom}</Link></td>
             <td>{user.prenom}</td>
             <td>{user.email}</td>
             <td>{user.adresse}</td>
             <td>{user.tel}</td>
+            <td>{calculateAge(user.birthdate)}</td>
             <td><button onClick={() => deleteUser(user.id)}  className="btn btn-danger">Supprimer</button></td>
           </tr>
         ))}

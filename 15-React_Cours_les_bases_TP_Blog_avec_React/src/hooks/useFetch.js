@@ -1,66 +1,27 @@
-// import { useEffect, useState } from "react";
-// const EmptyObject = {};
-
-// /**
-//  *
-//  * @param {string} url
-//  * @param {FetchEventInit} options
-//  * @returns
-//  */
-
-// export function useFetch(url, options = EmptyObject) {
-//   const [loading, setLoading] = useState(true);
-//   const [data, setData] = useState(null);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     fetch(url, {
-//       ...options,
-//       headers: {
-//         Accept: "application/json; charset=UTF-8",
-//         ...options?.headers,
-//       },
-//     })
-//       .then((r) => r.json())
-//       .then((data) => {console.log("dans useFetch")
-//         setData(data);
-//       })
-//       .catch((e) => {console.log('catchuseFetch')
-//         setError(e);
-//       })
-//       .finally(() => {
-//         setLoading(false);
-//       });
-//   }, [url,options]);
-
-//   return {
-//     loading,
-//     data,
-//     error,
-//     setData
-//   };
-// }
-
 
 import { useEffect, useState } from "react";
-const EmptyObject = {}
+import { useRefSync } from "./useRefSync";
+
+// const EmptyObject = {}
 
 /**
  * @param {string} url
  * @param {FetchEventInit} options
  */
-export function useFetch(url, options = EmptyObject) {
+export function useFetch(url, options) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const optionsRef = useRefSync(options)
+
   
 
   useEffect(() => {
     fetch(url, {
-      ...options,
+      ...optionsRef.current,
       headers: {
         Accept: "application/json; charset=UTF-8",
-        ...options?.headers,
+        ...optionsRef.current?.headers,
       },
     })
       .then((r) => r.json())
@@ -73,7 +34,7 @@ export function useFetch(url, options = EmptyObject) {
       .finally(() => {
         setLoading(false);
       });
-  }, [url, options]);
+  }, [url]);
 
   return {
     loading,

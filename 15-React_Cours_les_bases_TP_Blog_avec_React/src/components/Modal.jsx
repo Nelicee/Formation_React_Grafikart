@@ -23,5 +23,5 @@ export function Modal({ children, onClose }) {
       {children}
     </dialog>,
     document.body
-  );
+  )
 }
