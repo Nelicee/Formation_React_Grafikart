@@ -9,6 +9,13 @@ export function deleteUser(userId, usersList) {
 }
 
 
+
+export function addUser(user, usersList) {
+  const maxId = Math.max(...usersList.map(u => u.id), 0);
+  const newUser = { ...user, id: maxId + 1 };
+  return [...usersList, newUser];
+}
+
 export  function getUsers() {
   return users;
 }
@@ -23,19 +30,25 @@ return possessions.filter((possession) => possession.idUtilisateur == id)
   
 }
 
-// export function getAge(id){
-
-//   return users.filter((user) => user.birthdate == id)
-// }
 export function calculateAge(birthDate) {
   const today = new Date();
-  const birth = convertToDate(birthDate);
+
+  // Vérifie si la date contient des "/" pour déterminer si on doit utiliser convertToDate
+  const birth = birthDate.includes('/') ? convertToDate(birthDate) : new Date(birthDate);
+
+  // Vérification si la date est valide
+  if (isNaN(birth.getTime())) {
+    return 'Date invalide'; // Gérer le cas d'une date non valide
+  }
+
+  // Calcul de l'âge
   let age = today.getFullYear() - birth.getFullYear();
   const monthDiff = today.getMonth() - birth.getMonth();
-  
+
+  // Ajuste l'âge si la date d'anniversaire n'est pas encore passée cette année
   if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
     age--;
   }
-  
+
   return age;
 }
